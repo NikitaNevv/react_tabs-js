@@ -29,9 +29,7 @@ export const Tabs = ({ tabs, activeTabId, onTabSelected }) => {
       </div>
 
       <div className="block" data-cy="TabContent">
-        {resolvedActiveTab
-          ? resolvedActiveTab.content
-          : `Some text ${resolvedActiveTab.id}`}
+        {resolvedActiveTab?.content}
       </div>
     </div>
   );
