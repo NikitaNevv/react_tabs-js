@@ -1,5 +1,4 @@
 export const Tabs = ({ tabs, activeTabId, onTabSelected }) => {
-  const activeTab = tabs.find(tab => tab.id === activeTabId);
   const resolvedActiveTab = tabs.find(tab => tab.id === activeTabId) ?? tabs[0];
 
   return (
@@ -30,9 +29,9 @@ export const Tabs = ({ tabs, activeTabId, onTabSelected }) => {
       </div>
 
       <div className="block" data-cy="TabContent">
-        {activeTab
-          ? activeTab.content
-          : `Some text ${activeTabId.split('-')[1]}`}
+        {resolvedActiveTab
+          ? resolvedActiveTab.content
+          : `Some text ${resolvedActiveTab.id}`}
       </div>
     </div>
   );
